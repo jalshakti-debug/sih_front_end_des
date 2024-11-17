@@ -36,7 +36,7 @@ class _MapViewScreenState extends State<MapViewScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      color: Colors.indigo[50],
+                      color: Colors.green[50],
                       height: constraints.maxHeight,
                       child: Placeholder(),
                     ),
