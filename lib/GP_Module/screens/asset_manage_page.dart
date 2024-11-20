@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../tile_ob.dart';
+import '../../tile_ob.dart';
 
 class AssetManagePage extends StatefulWidget {
   const AssetManagePage({super.key});

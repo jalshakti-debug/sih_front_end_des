@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sih_ui_des/screens/asset_manage_page.dart';
-import 'package:sih_ui_des/old%20screens/compl_mng_screen.dart';
-import 'package:sih_ui_des/screens/dash_page.dart';
-import 'package:sih_ui_des/old%20screens/login_1.dart';
+import 'package:sih_ui_des/GP_Module/screens/dash_page.dart';
+import 'package:sih_ui_des/PHED_Module/phed_dashboard.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +30,7 @@ class _MyAppState extends State<MyApp> {
               surface: Colors.white,
               onSurface: Colors.black)),
       debugShowCheckedModeBanner: false,
-      home: DashPage(),
+      home: PhedDashboard(),
     );
   }
 }

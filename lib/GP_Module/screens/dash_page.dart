@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:sih_ui_des/screens/asset_manage_page.dart';
-import 'package:sih_ui_des/screens/complaint_screen.dart';
-import 'package:sih_ui_des/screens/home_page.dart';
-import 'package:sih_ui_des/screens/map_view_screen.dart';
-import 'package:sih_ui_des/screens/profile_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/asset_manage_page.dart';
+import 'package:sih_ui_des/GP_Module/screens/complaint_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/home_page.dart';
+import 'package:sih_ui_des/GP_Module/screens/map_view_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/profile_screen.dart';
 
-class DashPage extends StatefulWidget {
-  const DashPage({super.key});
+class GPDashPage extends StatefulWidget {
+  const GPDashPage({super.key});
 
   @override
-  State<DashPage> createState() => _DashPageState();
+  State<GPDashPage> createState() => _GPDashPageState();
 }
 
-class _DashPageState extends State<DashPage> {
+class _GPDashPageState extends State<GPDashPage> {
   int navInd = 2;
   final screens = [
     AssetManagePage(),
