@@ -101,40 +101,46 @@ class _PhedHomeScreenState extends State<PhedHomeScreen> {
                     mainAxisSpacing: 32,
                     children: [
                       StagTileOb(
+                        onTilePressed: Placeholder(),
                         icoPath: 'assets/images/water_tap.png',
                         labl: 'Manage GPs',
                         mainC: 1,
                         crossC: 1,
                       ),
                       StagTileOb(
+                        onTilePressed: Placeholder(),
                         icoPath: 'assets/images/water_tap.png',
                         labl: 'Asset Overview',
                         mainC: 1,
                         crossC: 1,
                       ),
                       StagTileOb(
+                        onTilePressed: Placeholder(),
                         icoPath: 'assets/images/water_tap.png',
                         labl: 'Financial Overview',
                         mainC: 2,
                         crossC: 1,
                       ),
                       StagTileOb(
+                        onTilePressed: Placeholder(),
                         icoPath: 'assets/images/water_tap.png',
                         labl: 'Map View',
                         mainC: 1,
                         crossC: 1,
                       ),
                       StagTileOb(
+                        onTilePressed: Placeholder(),
                         icoPath: 'assets/images/water_tap.png',
                         labl: 'Alerts',
                         mainC: 1,
                         crossC: 1,
                       ),
                       StagTileOb(
+                        onTilePressed: Placeholder(),
                           icoPath: 'assets/images/water_tap.png',
                           labl: 'Compare GPs',
                           mainC: 1,
-                          crossC: 3)
+                          crossC: 3),
                     ],
                   ),
                 ),

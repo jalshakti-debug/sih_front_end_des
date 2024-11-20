@@ -10,21 +10,17 @@ class PhedDashboard extends StatefulWidget {
 }
 
 class _PhedDashboardState extends State<PhedDashboard> {
-  int navInd = 2;
+  int navInd = 1;
   final screens = [
     Placeholder(),
-    Placeholder(),
     PhedHomeScreen(),
-    Placeholder(),
     Placeholder(),
   ];
   @override
   Widget build(BuildContext context) {
     final navIcons = <Widget>[
-      Icon(Icons.assessment),
-      Icon(Icons.map),
+      Icon(Icons.list_alt),
       Icon(Icons.home),
-      Icon(Icons.warning),
       Icon(Icons.person),
     ];
     return SafeArea(

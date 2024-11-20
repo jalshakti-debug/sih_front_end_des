@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:sih_ui_des/PHED_Module/phed_mng_gp_screen.dart';
 
 class TileOb extends StatelessWidget {
   final IconData ico;
@@ -47,12 +48,14 @@ class StagTileOb extends StatelessWidget {
   final String icoPath;
   final int mainC;
   final int crossC;
+  final Widget onTilePressed;
   const StagTileOb({
     super.key,
     required this.labl,
     required this.mainC,
     required this.crossC,
     required this.icoPath,
+    required this.onTilePressed,
   });
 
   @override
@@ -69,7 +72,9 @@ class StagTileOb extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
         ),
-        onPressed: () => null,
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>onTilePressed));
+        },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
