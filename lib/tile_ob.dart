@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:sih_ui_des/PHED_Module/phed_dashboard.dart';
 import 'package:sih_ui_des/PHED_Module/phed_mng_gp_screen.dart';
 
-class TileOb extends StatelessWidget {
+class TileOb extends StatefulWidget {
   final IconData ico;
   final String labl;
   // final String icoPath;
@@ -13,6 +14,11 @@ class TileOb extends StatelessWidget {
     // required this.icoPath,
   });
 
+  @override
+  State<TileOb> createState() => _TileObState();
+}
+
+class _TileObState extends State<TileOb> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -28,12 +34,12 @@ class TileOb extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
-            ico,
+            widget.ico,
             size: 70,
             color: Colors.blueGrey[700],
           ),
           Text(
-            labl,
+            widget.labl,
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 11),
           )
@@ -44,6 +50,7 @@ class TileOb extends StatelessWidget {
 }
 
 class StagTileOb extends StatelessWidget {
+  final GlobalKey<NavigatorState>? navKey;
   final String labl;
   final String icoPath;
   final int mainC;
@@ -56,6 +63,7 @@ class StagTileOb extends StatelessWidget {
     required this.crossC,
     required this.icoPath,
     required this.onTilePressed,
+    this.navKey,
   });
 
   @override
@@ -65,7 +73,8 @@ class StagTileOb extends StatelessWidget {
       crossAxisCellCount: crossC,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          elevation: 5,
+          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+          elevation: 4,
           backgroundColor: Color.fromARGB(255, 226, 235, 255),
           shape: RoundedRectangleBorder(
             side: BorderSide(width: 1),
@@ -86,10 +95,12 @@ class StagTileOb extends StatelessWidget {
                 )),
               ),
             ),
-            Text(
-              labl,
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            Flexible(
+              child: Text(
+                labl,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),

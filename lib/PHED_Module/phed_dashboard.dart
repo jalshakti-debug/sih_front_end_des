@@ -1,6 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:sih_ui_des/PHED_Module/phed_home_screen.dart';
+import 'package:sih_ui_des/PHED_Module/phed_inv_screen.dart';
+import 'package:sih_ui_des/PHED_Module/phed_profile_screen.dart';
 
 class PhedDashboard extends StatefulWidget {
   const PhedDashboard({super.key});
@@ -12,14 +14,14 @@ class PhedDashboard extends StatefulWidget {
 class _PhedDashboardState extends State<PhedDashboard> {
   int navInd = 1;
   final screens = [
-    Placeholder(),
+    PhedInvScreen(),
     PhedHomeScreen(),
-    Placeholder(),
+    PhedProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
     final navIcons = <Widget>[
-      Icon(Icons.list_alt),
+      ImageIcon(AssetImage('assets/images/inv_new_black.png')),
       Icon(Icons.home),
       Icon(Icons.person),
     ];
@@ -28,12 +30,12 @@ class _PhedDashboardState extends State<PhedDashboard> {
           extendBody: true,
           bottomNavigationBar: CurvedNavigationBar(
             height: 60,
-            index: navInd,
+            index: NavBarSetter.navIndex,
             items: navIcons,
             color: Colors.lightBlue,
             backgroundColor: Colors.transparent,
             buttonBackgroundColor: Colors.blue,
-            onTap: (navInd) => setState(() => this.navInd = navInd),
+            onTap: (navInd) => setState(() => NavBarSetter.setNavind(navInd)),
           ),
           appBar: AppBar(
             flexibleSpace: Padding(
@@ -70,7 +72,12 @@ class _PhedDashboardState extends State<PhedDashboard> {
               ),
             ),
           ),
-          body: screens[navInd]),
+          body: screens[NavBarSetter.navIndex]),
     );
   }
+}
+
+class NavBarSetter {
+  static int navIndex = 1;
+  static void setNavind(int navInd) => navIndex = navInd;
 }
