@@ -177,7 +177,7 @@ class _PhedHomeScreenState extends State<PhedHomeScreen> {
                               ),
                               Flexible(
                                 child: Text(
-                                  'Manage GPs',
+                                  'Compare GPs',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontSize: 30,
