@@ -12,7 +12,7 @@ class PhedDashboard extends StatefulWidget {
 }
 
 class _PhedDashboardState extends State<PhedDashboard> {
-  int navInd = 1;
+  int currentPageIndex = 1;
   final screens = [
     PhedInvScreen(),
     PhedHomeScreen(),
@@ -20,22 +20,39 @@ class _PhedDashboardState extends State<PhedDashboard> {
   ];
   @override
   Widget build(BuildContext context) {
-    final navIcons = <Widget>[
-      ImageIcon(AssetImage('assets/images/inv_new_black.png')),
-      Icon(Icons.home),
-      Icon(Icons.person),
-    ];
+    // final navIcons = <Widget>[
+    //   ImageIcon(AssetImage('assets/images/inv_new_black.png')),
+    //   Icon(Icons.home),
+    //   Icon(Icons.person),
+    // ];
     return SafeArea(
       child: Scaffold(
           extendBody: true,
-          bottomNavigationBar: CurvedNavigationBar(
-            height: 60,
-            index: NavBarSetter.navIndex,
-            items: navIcons,
-            color: Colors.lightBlue,
-            backgroundColor: Colors.transparent,
-            buttonBackgroundColor: Colors.blue,
-            onTap: (navInd) => setState(() => NavBarSetter.setNavind(navInd)),
+          bottomNavigationBar: NavigationBar(
+            onDestinationSelected: (int index) {
+              setState(() {
+                print(index);
+                currentPageIndex = index;
+              });
+            },
+            backgroundColor: Colors.lightBlue[100],
+            indicatorColor: Colors.lightBlue,
+            selectedIndex: currentPageIndex,
+            destinations: <Widget>[
+              NavigationDestination(
+                selectedIcon: Icon(Icons.home),
+                icon: ImageIcon(AssetImage('assets/images/inv_new_black.png')),
+                label: 'Inventory Overview',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.home_outlined),
+                label: 'Home',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              ),
+            ],
           ),
           appBar: AppBar(
             flexibleSpace: Padding(
@@ -72,12 +89,12 @@ class _PhedDashboardState extends State<PhedDashboard> {
               ),
             ),
           ),
-          body: screens[NavBarSetter.navIndex]),
+          body: screens[currentPageIndex]),
     );
   }
 }
 
-class NavBarSetter {
-  static int navIndex = 1;
-  static void setNavind(int navInd) => navIndex = navInd;
-}
+// class NavBarSetter {
+//   static int navIndex = 1;
+//   static void setNavind(int navInd) => navIndex = navInd;
+// }

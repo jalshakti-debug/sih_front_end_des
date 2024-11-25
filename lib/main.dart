@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sih_ui_des/GP_Module/screens/dash_page.dart';
+import 'package:sih_ui_des/PHED_Module/add_gp_screen.dart';
+import 'package:sih_ui_des/PHED_Module/gp_info_screen.dart';
 import 'package:sih_ui_des/PHED_Module/phed_dashboard.dart';
+import 'package:sih_ui_des/PHED_Module/phed_finan_over_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

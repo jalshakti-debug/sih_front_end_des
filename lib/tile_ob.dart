@@ -24,7 +24,7 @@ class _TileObState extends State<TileOb> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         elevation: 5,
-        backgroundColor: Colors.blue[100],
+        backgroundColor: Colors.indigo[100],
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),

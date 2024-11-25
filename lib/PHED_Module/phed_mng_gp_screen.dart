@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sih_ui_des/PHED_Module/add_gp_screen.dart';
 import 'package:sih_ui_des/tile_ob.dart';
 
 class PhedMngGpScreen extends StatefulWidget {
@@ -65,7 +66,7 @@ class _PhedMngGpScreenState extends State<PhedMngGpScreen> {
                       ),
                     ),
                     Expanded(
-                      flex: 2,
+                      flex: 3,
                       child: ListView.builder(
                         itemCount: 20,
                         itemBuilder: (context, index) {
@@ -92,35 +93,18 @@ class _PhedMngGpScreenState extends State<PhedMngGpScreen> {
                               side: BorderSide(width: 1),
                             ),
                           ),
-                          onPressed: () => null,
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => PhedAddGPScreen()));
+                          },
                           label: Text(
                             'Add Gram Panchayat',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                           icon: Icon(Icons.add),
                         ),
-                      ),
-                    ),
-                    Flexible(
-                      child: Text(
-                        'Inactive Gram Panchayats',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 22),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: ListView.builder(
-                        itemCount: 20,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            height: 48,
-                            decoration: BoxDecoration(
-                                border: Border.all(width: 1),
-                                borderRadius: BorderRadius.circular(4)),
-                            child: Text('Eg_List'),
-                          );
-                        },
                       ),
                     ),
                   ],

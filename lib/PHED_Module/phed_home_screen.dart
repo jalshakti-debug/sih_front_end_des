@@ -4,6 +4,7 @@ import 'package:sih_ui_des/PHED_Module/phed_alert_screen.dart';
 import 'package:sih_ui_des/PHED_Module/phed_asset_ovr_page.dart';
 import 'package:sih_ui_des/PHED_Module/phed_inv_screen.dart';
 import 'package:sih_ui_des/PHED_Module/phed_mng_gp_screen.dart';
+import 'package:sih_ui_des/PHED_Module/send_announce_screen.dart';
 
 import '../tile_ob.dart';
 
@@ -162,7 +163,7 @@ class _PhedHomeScreenState extends State<PhedHomeScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Placeholder()));
+                                    builder: (context) => PhedSendAnnounceScreen()));
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -171,16 +172,18 @@ class _PhedHomeScreenState extends State<PhedHomeScreen> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
-                                    image: AssetImage('assets/images/comparision.png'),
+                                    image: AssetImage('assets/images/announcement.png'),
                                   )),
                                 ),
                               ),
                               Flexible(
+                                flex: 2,
                                 child: Text(
-                                  'Compare GPs',
+                                  'Send Announcements to GP',
                                   textAlign: TextAlign.center,
+                                  softWrap: true,
                                   style: TextStyle(
-                                      fontSize: 30,
+                                      fontSize: 26,
                                       fontWeight: FontWeight.w500),
                                 ),
                               ),
