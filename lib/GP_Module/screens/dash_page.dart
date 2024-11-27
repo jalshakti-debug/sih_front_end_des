@@ -1,70 +1,98 @@
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:sih_ui_des/GP_Module/screens/asset_manage_page.dart';
-import 'package:sih_ui_des/GP_Module/screens/complaint_screen.dart';
-import 'package:sih_ui_des/GP_Module/screens/home_page.dart';
 import 'package:sih_ui_des/GP_Module/screens/map_view_screen.dart';
 import 'package:sih_ui_des/GP_Module/screens/profile_screen.dart';
+import '../screens/home_screen.dart';
 
-class GPDashPage extends StatefulWidget {
-  const GPDashPage({super.key});
+class GpDashboard extends StatefulWidget {
+  const GpDashboard({super.key});
 
   @override
-  State<GPDashPage> createState() => _GPDashPageState();
+  State<GpDashboard> createState() => _GpDashboardState();
 }
 
-class _GPDashPageState extends State<GPDashPage> {
-  int navInd = 2;
+class _GpDashboardState extends State<GpDashboard> {
+  int currentPageIndex = 2;
   final screens = [
-    AssetManagePage(),
-    MapViewScreen(),
-    HomePage(),
-    ComplaintScreen(),
-    ProfileScreen(),
+    Placeholder(),
+    GpMapViewScreen(),
+    GpHomeScreen(),
+    Placeholder(),
+    GpProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
-    final navIcons = <Widget>[
-      Icon(Icons.assessment),
-      Icon(Icons.map),
-      Icon(Icons.home),
-      Icon(Icons.warning),
-      Icon(Icons.person),
-    ];
     return SafeArea(
       child: Scaffold(
           extendBody: true,
-          bottomNavigationBar: CurvedNavigationBar(
-            height: 60,
-            index: navInd,
-            items: navIcons,
-            color: Colors.lightBlue,
-            backgroundColor: Colors.transparent,
-            buttonBackgroundColor: Colors.blue,
-            onTap: (navInd) => setState(() => this.navInd = navInd),
+          bottomNavigationBar: NavigationBar(
+            onDestinationSelected: (int index) {
+              setState(() {
+                print(index);
+                currentPageIndex = index;
+              });
+            },
+            backgroundColor: Colors.lightBlue[100],
+            indicatorColor: Colors.lightBlue,
+            selectedIndex: currentPageIndex,
+            destinations: <Widget>[
+              NavigationDestination(
+                icon: ImageIcon(AssetImage('assets/images/inv_new_black.png')),
+                label: 'Inventory Ov..',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.location_on),
+                label: 'GIS',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.warning),
+                label: 'Complaints',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              ),
+            ],
           ),
-          appBar: AppBar(flexibleSpace: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-                    children: [
-                      Flexible(
-                        child: SearchBar(
-                          hintText: 'Search Here',
-                          leading: Icon(Icons.search),
-                        ),
-                      ),
-                      IconButton(
-                        onPressed:() => null,
-                        icon: Icon(
-                          Icons.notifications_none,
-                          color: Colors.black,
-                        ),
-                        iconSize: 40,
-                      )
-                    ],
+          appBar: AppBar(
+            flexibleSpace: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Flexible(
+                    child: SearchBar(
+                      hintText: 'Search Here',
+                      leading: Icon(Icons.search),
+                      trailing: [],
+                    ),
                   ),
-          ),),
-          body: screens[navInd]),
+                  IconButton(
+                    alignment: Alignment.center,
+                    onPressed: () => null,
+                    icon: Icon(
+                      Icons.translate,
+                      color: Colors.lightBlue[900],
+                    ),
+                    iconSize: 30,
+                  ),
+                  IconButton(
+                    alignment: Alignment.center,
+                    onPressed: () => null,
+                    icon: Icon(
+                      Icons.notifications_none,
+                      color: Colors.black,
+                    ),
+                    iconSize: 30,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          body: screens[currentPageIndex]),
     );
   }
 }

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
-class PhedLoginPage extends StatefulWidget {
+class GPLoginPage extends StatefulWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String _id = '';
   String _pass = '';
 
-  PhedLoginPage({super.key});
+  GPLoginPage({super.key});
   @override
-  _PhedLoginPageState createState() => _PhedLoginPageState();
+  _GPLoginPageState createState() => _GPLoginPageState();
 }
 
-class _PhedLoginPageState extends State<PhedLoginPage> {
-  final TextEditingController _phedIdController = TextEditingController();
+class _GPLoginPageState extends State<GPLoginPage> {
+  final TextEditingController _gPIdController = TextEditingController();
   final TextEditingController _pController = TextEditingController();
   // controllers for otp field
   final List<TextEditingController> _otpControllers = List.generate(
@@ -24,7 +24,7 @@ class _PhedLoginPageState extends State<PhedLoginPage> {
 
   @override
   void dispose() {
-    _phedIdController.dispose();
+    _gPIdController.dispose();
     _pController.dispose();
     for (var controller in _otpControllers) {
       controller.dispose();
@@ -95,10 +95,10 @@ class _PhedLoginPageState extends State<PhedLoginPage> {
                       ),
                       const SizedBox(height: 25),
                       TextFormField(
-                        controller: _phedIdController,
+                        controller: _gPIdController,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.all(10.0),
-                          labelText: 'PHED ID',
+                          labelText: 'Gram Panchayat ID',
                           filled: true,
                           fillColor: const Color.fromARGB(255, 247, 252, 255),
                           border: OutlineInputBorder(
@@ -107,7 +107,7 @@ class _PhedLoginPageState extends State<PhedLoginPage> {
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Enter PHED ID';
+                            return 'Enter gram panchayat ID';
                           }
                           return null;
                         },

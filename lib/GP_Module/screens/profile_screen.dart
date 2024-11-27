@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class GpProfileScreen extends StatefulWidget {
+  const GpProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<GpProfileScreen> createState() => _GpProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _GpProfileScreenState extends State<GpProfileScreen> {
   @override
   Widget build(BuildContext context) {
     var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return LayoutBuilder(builder: (context, constraints) {
-      return GridView(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 1,
-            mainAxisExtent: isPortrait
-                ? constraints.maxHeight - 80
-                : constraints.maxHeight + 250),
+      return Column(
         children: [
           Padding(
             padding: const EdgeInsets.only(
@@ -26,7 +21,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               top: 8.0,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),

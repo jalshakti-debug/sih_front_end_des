@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MapViewScreen extends StatefulWidget {
-  const MapViewScreen({super.key});
+class GpMapViewScreen extends StatefulWidget {
+  const GpMapViewScreen({super.key});
 
   @override
-  State<MapViewScreen> createState() => _MapViewScreenState();
+  State<GpMapViewScreen> createState() => _GpMapViewScreenState();
 }
 
-class _MapViewScreenState extends State<MapViewScreen> {
+class _GpMapViewScreenState extends State<GpMapViewScreen> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
