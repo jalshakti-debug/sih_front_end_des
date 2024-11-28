@@ -52,14 +52,26 @@ class _GpRecieptsScreenState extends State<GpRecieptsScreen> {
               child: ListView.builder(
                 itemCount: 20,
                 itemBuilder: (context, index) {
-                  return RecieptItem(screenSize: screenSize);
+                  return RecieptItem(
+                      transcTitle: 'Transaction Title',
+                      transcDesc:
+                          'Transaction Desc example description money used for something',
+                      transcDate: 'xx-xx-xxxx',
+                      transcTime: 'XX:XX',
+                      transcAmount: 00000,
+                      currentBal: 000000000,
+                      transcType: 'credit',
+                      screenSize: screenSize);
                 },
               ),
             ),
             Align(
-                alignment: Alignment.center,
-                child: ElevatedButton(
-                    onPressed: () {}, child: Text('Add new Reciept')))
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text('Add new Reciept'),
+              ),
+            ),
           ],
         ),
       ),
@@ -68,8 +80,22 @@ class _GpRecieptsScreenState extends State<GpRecieptsScreen> {
 }
 
 class RecieptItem extends StatelessWidget {
+  final String transcTitle;
+  final String transcDesc;
+  final String transcDate;
+  final String transcTime;
+  final int transcAmount;
+  final int currentBal;
+  final String transcType;
   const RecieptItem({
     super.key,
+    required this.transcTitle,
+    required this.transcDesc,
+    required this.transcDate,
+    required this.transcTime,
+    required this.transcAmount,
+    required this.currentBal,
+    required this.transcType,
     required this.screenSize,
   });
 
@@ -82,7 +108,7 @@ class RecieptItem extends StatelessWidget {
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: const Color.fromRGBO(104, 252, 252, 0.8),
+        color: Colors.blue[100],
         border: Border.all(
           color: Colors.black,
           width: 1,
@@ -91,17 +117,22 @@ class RecieptItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            'assets/images/money_debit.png', // Replace with your asset path
-            height: screenSize*0.08,
-          ),
-          const SizedBox(width: 15),
+          (transcType == 'debit')
+              ? Image.asset(
+                  'assets/images/money_debit.png',
+                  height: screenSize * 0.08,
+                )
+              : Image.asset(
+                  'assets/images/money_credit.png',
+                  height: screenSize * 0.08,
+                ),
+          const SizedBox(width: 5),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Transaction Title',
+                  transcTitle,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 24,
@@ -109,8 +140,9 @@ class RecieptItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 5),
                 Text(
-                  'Transaction Desc example description money used for something',
+                  transcDesc,
                   overflow: TextOverflow.ellipsis,
+                  maxLines: 3,
                   style: const TextStyle(
                     fontSize: 12,
                     color: Colors.black54,
@@ -123,30 +155,32 @@ class RecieptItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                '- Rs. XXXXXX',
+                (transcType == 'debit')
+                    ? '- Rs. $transcAmount'
+                    : '+ Rs. $transcAmount',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
-                  color: Colors.red,
+                  color: (transcType == 'debit') ? Colors.red : Colors.green,
                 ),
               ),
               const SizedBox(height: 5),
               Text(
-                'Rs. XXXXXXXXX',
+                'Rs. ' + currentBal.toString(),
                 style: const TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
-                'xx-xx-xxxx',
+                transcDate,
                 style: const TextStyle(
                   fontSize: 12,
                   color: Colors.black87,
                 ),
               ),
               Text(
-                'XX:XX',
+                transcTime,
                 style: const TextStyle(
                   fontSize: 12,
                   color: Colors.black87,
