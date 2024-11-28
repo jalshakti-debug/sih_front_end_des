@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class GpRequestFundsScreen extends StatefulWidget {
-  const GpRequestFundsScreen({super.key});
+class GpAddNewReceiptScreen extends StatefulWidget {
+  const GpAddNewReceiptScreen({super.key});
 
   @override
-  State<GpRequestFundsScreen> createState() => _GpRequestFundsScreenState();
+  State<GpAddNewReceiptScreen> createState() => _GpAddNewReceiptScreenState();
 }
 
-class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
+class _GpAddNewReceiptScreenState extends State<GpAddNewReceiptScreen> {
   String? selectedReason;
   final List<String> reasList = [
     'Asset Repair',
-    'Consumable Purchase',
-    'Replacement'
+    'Maintenance Work',
+    'Emergency'
   ];
   late FocusNode amountfocus;
   late FocusNode reasonfocus;
@@ -24,6 +23,7 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
     amountfocus = FocusNode();
     reasonfocus = FocusNode();
   }
+
   @override
   void dispose() {
     amountfocus.dispose();
@@ -51,7 +51,7 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
                     SizedBox(
                       width: screenSize * 0.25,
                       child: const Text(
-                        'Request Funds',
+                        'Add New Receipt',
                         softWrap: true,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -82,7 +82,7 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Purpose of Fund Request:',
+                    'Catagory:',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                   ),
                   Container(
@@ -105,7 +105,7 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
                       hint: Container(
                         margin: EdgeInsets.only(left: 10),
                         child: Text(
-                          "Select Reason",
+                          "Select Catagory",
                         ),
                       ),
                       onChanged: (newVal) {
@@ -120,7 +120,7 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
                     height: screenSize * 0.025,
                   ),
                   Text(
-                    'Amount Required:',
+                    'Amount:',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                   ),
                   TextField(
@@ -136,7 +136,7 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
                     height: screenSize * 0.025,
                   ),
                   Text(
-                    'Describe your Reason:',
+                    'Description:',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                   ),
                   TextField(
@@ -146,7 +146,8 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
                       FocusScope.of(context).unfocus();
                     },
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(), hintText: 'Describe why you need the funds'),
+                        border: OutlineInputBorder(),
+                        hintText: 'Describe the transaction details'),
                   ),
                   SizedBox(
                     height: screenSize * 0.025,
@@ -155,8 +156,9 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
               ),
             ),
             Align(
-              alignment: Alignment.center,
-              child: ElevatedButton(onPressed: (){}, child: Text('Submit Request')))
+                alignment: Alignment.center,
+                child: ElevatedButton(
+                    onPressed: () {}, child: Text('Submit Request')))
           ],
         ),
       ),
