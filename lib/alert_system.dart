@@ -68,7 +68,7 @@ class _PhedAlertSystemState extends State<PhedAlertSystem> {
                                 children: [
                                   Text('XXXX-XXXX'),
                                   Text(
-                                    'Alert: xxxxxxxxxxxxxxxxx',
+                                    'Alert: xxxxxxxxxxxxxxxx',
                                     style: TextStyle(color: Colors.red),
                                   ),
                                 ],
