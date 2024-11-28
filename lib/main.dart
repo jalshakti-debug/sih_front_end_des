@@ -3,6 +3,7 @@ import 'package:sih_ui_des/GP_Module/screens/consumer_info_screen.dart';
 import 'package:sih_ui_des/GP_Module/screens/dash_page.dart';
 import 'package:sih_ui_des/GP_Module/screens/gp_login%20page.dart';
 import 'package:sih_ui_des/GP_Module/screens/home_screen.dart';
+import 'package:sih_ui_des/PHED_Module/add_announcements_screen.dart';
 import 'package:sih_ui_des/PHED_Module/add_gp_screen.dart';
 import 'package:sih_ui_des/PHED_Module/asset_info_screen.dart';
 import 'package:sih_ui_des/PHED_Module/gp_info_screen.dart';
@@ -41,7 +42,7 @@ class _MyAppState extends State<MyApp> {
               surface: Colors.white,
               onSurface: Colors.black)),
       debugShowCheckedModeBanner: false,
-      home: PhedSendAnnounceScreen(),
+      home: PhedAddAnnouncementsScreen(),
     );
   }
 }

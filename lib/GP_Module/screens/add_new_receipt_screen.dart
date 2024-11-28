@@ -71,6 +71,28 @@ class _GpAddNewReceiptScreenState extends State<GpAddNewReceiptScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Container(
+              height: screenSize * 0.06,
+              child: ListView.builder(
+                itemCount: 2,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Card(
+                    elevation: 4,
+                    margin: EdgeInsets.symmetric(horizontal: 40, vertical: 4),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(32),
+                        side: BorderSide(width: 0.5)),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 32.0),
+                        child: Text('Expenditure'),
+                      )),
+                  );
+                },
+              ),
+            ),
             Text(
               'Submit funding requirements for approval',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),

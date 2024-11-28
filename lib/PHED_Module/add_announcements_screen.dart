@@ -10,65 +10,110 @@ class PhedAddAnnouncementsScreen extends StatefulWidget {
 
 class _PhedAddAnnouncementsScreenState
     extends State<PhedAddAnnouncementsScreen> {
+  String? selectedReason;
+  final List<String> gpIdList = ['GPXXXXX', 'GPYYYYY', 'GPZZZZZ'];
+  late FocusNode amountfocus;
+  late FocusNode reasonfocus;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.sizeOf(context).height;
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 130,
+        backgroundColor: Colors.white,
+        flexibleSpace: SafeArea(
+          child: FlexibleSpaceBar(
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Add',
+                  softWrap: true,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 40,
+                  ),
+                ),
+                const Text(
+                  'Announcement',
+                  softWrap: true,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 40,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 64,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Container(
-                    height: 70,
-                    width: 70,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image:
-                                AssetImage('assets/images/announcement.png'))),
-                  ),
-                  SizedBox(width: 16),
-                  Text(
-                    'Send Announcements',
-                    softWrap: true,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 32,
-                    ),
-                  ),
-                ],
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.all(32.0),
               child: Column(
                 children: [
-                  DropdownMenu(dropdownMenuEntries: [], label: Text('Announcement Type'),),
-                  SizedBox(
-                    height: 40,
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.blue[100],
+                        border: Border.all()),
+                    child: DropdownButton(
+                      isExpanded: true,
+                      iconSize: 30,
+                      iconEnabledColor: Colors.black,
+                      iconDisabledColor: Colors.black,
+                      items: gpIdList.map((item) {
+                        return DropdownMenuItem(
+                          child: Text(
+                            item.toString(),
+                          ),
+                          value: item.toString(),
+                        );
+                      }).toList(),
+                      hint: Container(
+                        margin: EdgeInsets.only(left: 10),
+                        child: Text(
+                          "Select GP Id",
+                        ),
+                      ),
+                      onChanged: (newVal) {
+                        setState(() {
+                          selectedReason = newVal;
+                        });
+                      },
+                      value: selectedReason,
+                    ),
                   ),
                   SizedBox(
-                    height: 300,
-                    child: TextField(
-                      textAlign: TextAlign.center,
-                      textAlignVertical: TextAlignVertical.top,
-                      expands: true,
-                      maxLines: null,
-                      minLines: null,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.blue[100],
-                        labelText: 'Announcement',
-                        alignLabelWithHint: true,
-                        hintText: 'Enter Announcement Here',
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                      ),
+                    height: 10,
+                  ),
+                  TextField(
+                    textAlign: TextAlign.center,
+                    textAlignVertical: TextAlignVertical.top,
+                    maxLines: 20,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.blue[100],
+                      labelText: 'Announcement',
+                      alignLabelWithHint: true,
+                      hintText: 'Enter Announcement Here',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10)),
                     ),
                   ),
                 ],

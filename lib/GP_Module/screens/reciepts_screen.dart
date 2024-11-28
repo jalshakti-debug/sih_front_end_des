@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sih_ui_des/GP_Module/screens/add_new_receipt_screen.dart';
 
 class GpRecieptsScreen extends StatefulWidget {
   const GpRecieptsScreen({super.key});
@@ -68,7 +69,9 @@ class _GpRecieptsScreenState extends State<GpRecieptsScreen> {
             Align(
               alignment: Alignment.center,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, (MaterialPageRoute(builder: (context)=>GpAddNewReceiptScreen())));
+                },
                 child: Text('Add new Reciept'),
               ),
             ),
