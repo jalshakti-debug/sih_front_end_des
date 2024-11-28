@@ -7,8 +7,10 @@ import 'package:sih_ui_des/PHED_Module/add_gp_screen.dart';
 import 'package:sih_ui_des/PHED_Module/asset_info_screen.dart';
 import 'package:sih_ui_des/PHED_Module/gp_info_screen.dart';
 import 'package:sih_ui_des/PHED_Module/inventory_info_screen.dart';
+import 'package:sih_ui_des/PHED_Module/phed_alert_screen.dart';
 import 'package:sih_ui_des/PHED_Module/phed_dashboard.dart';
 import 'package:sih_ui_des/PHED_Module/phed_finan_over_screen.dart';
+import 'package:sih_ui_des/alert_system.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +40,7 @@ class _MyAppState extends State<MyApp> {
               surface: Colors.white,
               onSurface: Colors.black)),
       debugShowCheckedModeBanner: false,
-      home: PhedAssetInfoScreen(),
+      home: GpDashboard(),
     );
   }
 }
