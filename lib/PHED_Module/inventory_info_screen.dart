@@ -97,33 +97,34 @@ class _PhedInventoryInfoScreenState extends State<PhedInventoryInfoScreen> {
                             child: Container(
                               height: screenSize * 0.08,
                               child: ElevatedButton(
-                                  onPressed: () => null,
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor:
-                                        Color.fromARGB(210, 227, 242, 250),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Column(
-                                        children: [
-                                          Container(
-                                            child: Icon(
-                                              Icons.inventory,
-                                              size: screenSize * 0.055,
-                                            ),
+                                onPressed: () => null,
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor:
+                                      Color.fromARGB(210, 227, 242, 250),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Container(
+                                          child: Icon(
+                                            Icons.inventory,
+                                            size: screenSize * 0.055,
                                           ),
-                                          Text('Hydrochloric Acid')
-                                        ],
-                                      ),
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text('Remaining - XX l'),
-                                        ],
-                                      ),
-                                    ],
-                                  )),
+                                        ),
+                                        Text('Hydrochloric Acid')
+                                      ],
+                                    ),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text('Remaining - XX l'),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           );
                         },
