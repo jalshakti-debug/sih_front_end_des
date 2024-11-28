@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sih_ui_des/PHED_Module/update_info_screen.dart';
+import 'package:sih_ui_des/info_field_tile.dart';
 
 class PhedGpInfoScreen extends StatefulWidget {
   const PhedGpInfoScreen({super.key});
@@ -109,33 +110,6 @@ class _PhedGpInfoScreenState extends State<PhedGpInfoScreen> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class info_field_tile extends StatelessWidget {
-  final String label;
-  final String value;
-  const info_field_tile({
-    super.key,
-    required this.label,
-    required this.value,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          label,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-        ),
-        Text(
-          value,
-          style: TextStyle(fontSize: 20),
-        ),
-        SizedBox(height: 20),
-      ],
     );
   }
 }

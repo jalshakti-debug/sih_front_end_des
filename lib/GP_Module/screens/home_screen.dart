@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:sih_ui_des/GP_Module/screens/assets_overview_screen.dart';
 import 'package:sih_ui_des/GP_Module/screens/manage_consumers.dart';
+import 'package:sih_ui_des/GP_Module/screens/request_funds_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/view_complaints_screen.dart';
 import 'package:sih_ui_des/tile_ob.dart';
 
 class GpHomeScreen extends StatefulWidget {
@@ -125,14 +127,14 @@ class _GpHomeScreenState extends State<GpHomeScreen> {
                         crossC: 1,
                       ),
                       const StagTileOb(
-                        onTilePressed: Placeholder(),
+                        onTilePressed: GpViewComplaintsScreen(),
                         icoPath: 'assets/images/alerts.png',
                         labl: 'View Complaints',
                         mainC: 1,
                         crossC: 1,
                       ),
                       const StagTileOb(
-                        onTilePressed: Placeholder(),
+                        onTilePressed: GpRequestFundsScreen(),
                         icoPath: 'assets/images/req_funds.png',
                         labl: 'Request Funds',
                         mainC: 1,

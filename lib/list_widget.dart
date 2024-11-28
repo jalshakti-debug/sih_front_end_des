@@ -12,6 +12,7 @@ class ListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 5,
       margin: EdgeInsets.all(8),
       color: Colors.blue[100],
       child: Card(
@@ -23,19 +24,25 @@ class ListWidget extends StatelessWidget {
           child: ListView.builder(
             itemCount: 20,
             itemBuilder: (context, index) {
-              return Container(
-                height: 48,
-                // decoration: BoxDecoration(
-                //     border: Border.all(width: 1),
-                //     borderRadius: BorderRadius.circular(16)),
-                child: Card(
-                    color: const Color.fromARGB(210, 227, 242, 250),
-                    child: Column(
-                      children: [
-                        Text(txt1),
-                        Text(txt2),
-                      ],
-                    )),
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4.0),
+                child: Container(
+                  height: 48,
+                  // decoration: BoxDecoration(
+                  //     border: Border.all(width: 1),
+                  //     borderRadius: BorderRadius.circular(16)),
+                  child: ElevatedButton(
+                      onPressed: () => null,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(210, 227, 242, 250),
+                      ),
+                      child: Column(
+                        children: [
+                          Text(txt1),
+                          Text(txt2),
+                        ],
+                      )),
+                ),
               );
             },
           ),
