@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sih_ui_des/GP_Module/screens/inventory_info_screen.dart';
-import 'package:sih_ui_des/GP_Module/screens/map_view_screen.dart';
-import 'package:sih_ui_des/GP_Module/screens/profile_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/inventory/inventory_info_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/dashboard/map_view_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/dashboard/profile_screen.dart';
 import '../../common_widgets/global_backgroung.dart';
 import '../../common_widgets/layout_builder_common.dart';
 import '../screens/home_screen.dart';

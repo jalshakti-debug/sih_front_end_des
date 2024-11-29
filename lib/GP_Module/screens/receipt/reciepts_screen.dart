@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sih_ui_des/GP_Module/screens/add_new_receipt_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/receipt/add_new_receipt_screen.dart';
 
-import '../../common_widgets/global_backgroung.dart';
-import '../../common_widgets/layout_builder_common.dart';
+import '../../../common_widgets/global_backgroung.dart';
+import '../../../common_widgets/layout_builder_common.dart';
 
 class GpRecieptsScreen extends StatefulWidget {
   const GpRecieptsScreen({super.key});

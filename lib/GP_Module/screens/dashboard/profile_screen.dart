@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../common_widgets/global_backgroung.dart';
-import '../../common_widgets/layout_builder_common.dart';
+import '../../../common_widgets/global_backgroung.dart';
+import '../../../common_widgets/layout_builder_common.dart';
 
 class GpProfileScreen extends StatefulWidget {
   const GpProfileScreen({super.key});

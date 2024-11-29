@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:sih_ui_des/GP_Module/screens/assets_overview_screen.dart';
-import 'package:sih_ui_des/GP_Module/screens/manage_consumers.dart';
-import 'package:sih_ui_des/GP_Module/screens/reciepts_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/consumer/manage_consumers.dart';
+import 'package:sih_ui_des/GP_Module/screens/receipt/reciepts_screen.dart';
 import 'package:sih_ui_des/GP_Module/screens/request_funds_screen.dart';
 import 'package:sih_ui_des/GP_Module/screens/view_complaints_screen.dart';
 import 'package:sih_ui_des/tile_ob.dart';

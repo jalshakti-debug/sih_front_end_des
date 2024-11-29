@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sih_ui_des/GP_Module/screens/consumer_info_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/consumer/consumer_info_screen.dart';
 import 'package:sih_ui_des/GP_Module/screens/dash_page.dart';
 import 'package:sih_ui_des/GP_Module/screens/gp_login%20page.dart';
 import 'package:sih_ui_des/GP_Module/screens/home_screen.dart';

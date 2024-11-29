@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../common_widgets/global_backgroung.dart';
-import '../../common_widgets/layout_builder_common.dart';
-import '../../info_field_tile.dart';
+import '../../../common_widgets/global_backgroung.dart';
+import '../../../common_widgets/layout_builder_common.dart';
+import '../../../info_field_tile.dart';
 
 class GpConsumerInfoScreen extends StatefulWidget {
   const GpConsumerInfoScreen({super.key});

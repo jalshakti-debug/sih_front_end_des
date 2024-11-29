@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../common_widgets/global_backgroung.dart';
-import '../../common_widgets/layout_builder_common.dart';
+import '../../../common_widgets/global_backgroung.dart';
+import '../../../common_widgets/layout_builder_common.dart';
 
 class GpAddNewReceiptScreen extends StatefulWidget {
   const GpAddNewReceiptScreen({super.key});

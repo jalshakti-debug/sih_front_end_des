@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sih_ui_des/GP_Module/screens/consumer_info_screen.dart';
-import 'package:sih_ui_des/GP_Module/screens/register_consumer_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/consumer/consumer_info_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/consumer/register_consumer_screen.dart';
 
-import '../../common_widgets/global_backgroung.dart';
-import '../../common_widgets/layout_builder_common.dart';
-import '../../list_widget.dart';
+import '../../../common_widgets/global_backgroung.dart';
+import '../../../common_widgets/layout_builder_common.dart';
+import '../../../list_widget.dart';
 
 class GpManageConsumers extends StatefulWidget {
   const GpManageConsumers({super.key});
