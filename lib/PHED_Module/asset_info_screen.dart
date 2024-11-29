@@ -77,8 +77,10 @@ class _PhedAssetInfoScreenState extends State<PhedAssetInfoScreen> {
             Expanded(
               child: Container(
                 child: ListWidget(
-                    txt1: 'Pump Id: xxxxxxx',
-                    txt2: 'Installation Date: xx-xx-xxxx'),
+                  txt1: 'Pump Id: xxxxxxx',
+                  txt2: 'Installation Date: xx-xx-xxxx',
+                  ontap: Placeholder(),
+                ),
               ),
             ),
           ],

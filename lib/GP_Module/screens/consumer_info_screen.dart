@@ -1,89 +1,69 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../info_field_tile.dart';
 
-class GpConsumerInfoScreem extends StatefulWidget {
-  const GpConsumerInfoScreem({super.key});
+class GpConsumerInfoScreen extends StatefulWidget {
+  const GpConsumerInfoScreen({super.key});
 
   @override
-  State<GpConsumerInfoScreem> createState() => _GpConsumerInfoScreemState();
+  State<GpConsumerInfoScreen> createState() => _GpConsumerInfoScreenState();
 }
 
-class _GpConsumerInfoScreemState extends State<GpConsumerInfoScreem> {
+class _GpConsumerInfoScreenState extends State<GpConsumerInfoScreen> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.sizeOf(context).height;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        toolbarHeight: screenSize * 0.125,
-        flexibleSpace: SafeArea(
-          child: FlexibleSpaceBar(
-            title: Column(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 16),
-                    SizedBox(
-                      width: screenSize * 0.25,
-                      child: Text(
-                        'Consumer Information',
-                        softWrap: true,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 40,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+          backgroundColor: Colors.transparent,
+          title: Text(
+            '<Consumer Name>',
+            softWrap: true,
+            maxLines: 2,
+            style: GoogleFonts.getFont(
+              'Urbanist',
+              fontWeight: FontWeight.bold,
+              fontSize: 26,
             ),
           ),
         ),
-      ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: screenSize*0.05),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(
+            Expanded(
               child: Card(
                 color: Color.fromARGB(255, 226, 235, 255),
                 elevation: 4,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 100.0, vertical: 16),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 16,
-                      ),
-                      info_field_tile(
-                        label: 'Consumer Name',
-                        value: 'Pankaj Kumar',
-                      ),
-                      info_field_tile(
-                        label: 'Consumer Id',
-                        value: '101034',
-                      ),
-                      info_field_tile(
-                        label: 'Mobile Number',
-                        value: '+91 9637418520',
-                      ),
-                      info_field_tile(
-                        label: 'Aadhar Id',
-                        value: '5678 9671 1254',
-                      ),
-                      info_field_tile(
-                        label: 'Address',
-                        value:
-                            'XXXX X, XXXXX XXXXXXXXxx XXXXXXXXXXXxxx XXXXXXX XXXXX',
-                      ),
-                    ],
-                  ),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 16,
+                    ),
+                    info_field_tile(
+                      label: 'Consumer Name',
+                      value: 'Pankaj Kumar',
+                    ),
+                    info_field_tile(
+                      label: 'Consumer Id',
+                      value: '101034',
+                    ),
+                    info_field_tile(
+                      label: 'Mobile Number',
+                      value: '+91 9637418520',
+                    ),
+                    info_field_tile(
+                      label: 'Aadhar Id',
+                      value: '5678 9671 1254',
+                    ),
+                    info_field_tile(
+                      label: 'Address',
+                      value:'XXXXX X, XXXXX XXXXXXXXxx XXXXXXXXXXXxxx XXXXXXX XXXXX',
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -94,7 +74,7 @@ class _GpConsumerInfoScreemState extends State<GpConsumerInfoScreem> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  padding: EdgeInsets.symmetric(horizontal: screenSize*0.01),
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                       padding:
@@ -152,4 +132,6 @@ class _GpConsumerInfoScreemState extends State<GpConsumerInfoScreem> {
       ),
     );
   }
+
+  
 }

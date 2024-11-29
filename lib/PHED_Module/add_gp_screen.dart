@@ -136,6 +136,8 @@ class InputField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         labelText: label,
+
+        
         hintText: value,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),

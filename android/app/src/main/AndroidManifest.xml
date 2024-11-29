@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
     package="com.example.sih_ui_des">
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="sih_ui_des"
         android:name="${applicationName}"

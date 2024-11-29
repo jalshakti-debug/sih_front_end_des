@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sih_ui_des/GP_Module/screens/consumer_info_screen.dart';
 
 import '../../list_widget.dart';
 
@@ -34,7 +35,8 @@ class _GpManageConsumersState extends State<GpManageConsumers> {
           'Manage Consumers',
           softWrap: true,
           maxLines: 2,
-          style: GoogleFonts.urbanist(
+          style: GoogleFonts.getFont(
+            'Urbanist',
             fontWeight: FontWeight.bold,
             fontSize: 26,
           ),
@@ -44,7 +46,9 @@ class _GpManageConsumersState extends State<GpManageConsumers> {
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           children: [
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             TextField(
               decoration: InputDecoration(
                 prefixIcon: const Icon(Icons.search),
@@ -58,7 +62,9 @@ class _GpManageConsumersState extends State<GpManageConsumers> {
                         const BorderSide(width: 1, color: Colors.black)),
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -66,7 +72,7 @@ class _GpManageConsumersState extends State<GpManageConsumers> {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                 )),
             Container(
-              height: screenSize * 0.045,
+              height: screenSize * 0.05,
               child: ListView.builder(
                 itemCount: 3,
                 scrollDirection: Axis.horizontal,
@@ -82,6 +88,7 @@ class _GpManageConsumersState extends State<GpManageConsumers> {
                           horizontal: 12.0, vertical: 8.0),
                       child: Text(
                         'Household',
+                        style: TextStyle(fontSize: screenSize * 0.015),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -94,8 +101,12 @@ class _GpManageConsumersState extends State<GpManageConsumers> {
             ),
             Expanded(
               child: Container(
-                  child: ListWidget(
-                      txt1: 'Name: xxxxxxx', txt2: 'Consumer ID xxxx xxxx')),
+                child: ListWidget(
+                  txt1: 'Name: xxxxxxx',
+                  txt2: 'Consumer ID xxxx xxxx',
+                  ontap: GpConsumerInfoScreen(),
+                ),
+              ),
             ),
           ],
         ),

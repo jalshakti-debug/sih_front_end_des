@@ -32,7 +32,8 @@ class _GpInventoryInfoScreenState extends State<GpInventoryInfoScreen> {
           'Inventory Info',
           softWrap: true,
           maxLines: 2,
-          style: GoogleFonts.urbanist(
+          style: GoogleFonts.getFont(
+            'Urbanist',
             fontWeight: FontWeight.bold,
             fontSize: 26,
           ),
@@ -50,19 +51,17 @@ class _GpInventoryInfoScreenState extends State<GpInventoryInfoScreen> {
                 itemBuilder: (context, index) {
                   return Card(
                     elevation: 4,
-                    margin:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                        side: const BorderSide(width: 0.5)),
-                    child: const Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
-                      child: Text(
-                        'Chemicals',
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
+                        borderRadius: BorderRadius.circular(32),
+                        side: BorderSide(width: 0.5)),
+                    child: Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 12.0, horizontal: 8.0),
+                          child: Text('Chemicals'),
+                        )),
                   );
                 },
               ),

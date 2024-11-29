@@ -147,58 +147,71 @@ class _GpHomeScreenState extends State<GpHomeScreen> {
                           labl: 'Manage IOT',
                           mainC: 1,
                           crossC: 1),
-                      StaggeredGridTile.count(
-                        mainAxisCellCount: 1,
-                        crossAxisCellCount: 2,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 8, horizontal: 12),
-                            elevation: 4,
-                            backgroundColor:
-                                const Color.fromARGB(255, 226, 235, 255),
-                            shape: RoundedRectangleBorder(
-                              side: const BorderSide(width: 1),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => GpRecieptsScreen()));
-                          },
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                child: Image.asset(
-                                  'assets/images/reciepts.png',
-                                  fit: BoxFit.fill,
-                                  height: 90,
-                                  width: 90,
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              const Expanded(
-                                child: const Text(
-                                  "Submit reciepts to PHED",
-                                  textAlign: TextAlign.center,
-                                  overflow: TextOverflow.clip,
-                                  maxLines: 3,
-                                  softWrap: true,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                      StagTileOb(
+                        labl: 'Submit reciepts',
+                        mainC: 1,
+                        crossC: 1,
+                        icoPath: 'assets/images/reciepts.png',
+                        onTilePressed: GpRecieptsScreen(),
                       ),
+                      StagTileOb(
+                          labl: 'Manage Workers',
+                          mainC: 1,
+                          crossC: 1,
+                          icoPath: 'assets/images/worker.png',
+                          onTilePressed: Placeholder())
+                      // StaggeredGridTile.count(
+                      //   mainAxisCellCount: 1,
+                      //   crossAxisCellCount: 2,
+                      //   child: ElevatedButton(
+                      //     style: ElevatedButton.styleFrom(
+                      //       padding: const EdgeInsets.symmetric(
+                      //           vertical: 8, horizontal: 12),
+                      //       elevation: 4,
+                      //       backgroundColor:
+                      //           const Color.fromARGB(255, 226, 235, 255),
+                      //       shape: RoundedRectangleBorder(
+                      //         side: const BorderSide(width: 1),
+                      //         borderRadius: BorderRadius.circular(10),
+                      //       ),
+                      //     ),
+                      //     onPressed: () {
+                      //       Navigator.push(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //               builder: (context) => GpRecieptsScreen()));
+                      //     },
+                      //     child: Row(
+                      //       mainAxisSize: MainAxisSize.max,
+                      //       mainAxisAlignment: MainAxisAlignment.center,
+                      //       children: [
+                      //         Container(
+                      //           child: Image.asset(
+                      //             'assets/images/reciepts.png',
+                      //             fit: BoxFit.fill,
+                      //             height: 90,
+                      //             width: 90,
+                      //           ),
+                      //         ),
+                      //         const SizedBox(
+                      //           width: 10,
+                      //         ),
+                      //         const Expanded(
+                      //           child: const Text(
+                      //             "Submit reciepts to PHED",
+                      //             textAlign: TextAlign.center,
+                      //             overflow: TextOverflow.clip,
+                      //             maxLines: 3,
+                      //             softWrap: true,
+                      //             style: TextStyle(
+                      //                 fontSize: 20,
+                      //                 fontWeight: FontWeight.w500),
+                      //           ),
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),

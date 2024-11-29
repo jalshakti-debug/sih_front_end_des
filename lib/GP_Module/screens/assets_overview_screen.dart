@@ -21,7 +21,8 @@ class _GpAssetsOverviewScreenState extends State<GpAssetsOverviewScreen> {
             'Asset Overview',
             softWrap: true,
             maxLines: 2,
-            style: GoogleFonts.urbanist(
+            style: GoogleFonts.getFont(
+              'Urbanist',
               fontWeight: FontWeight.bold,
               fontSize: 26,
             ),
@@ -30,7 +31,9 @@ class _GpAssetsOverviewScreenState extends State<GpAssetsOverviewScreen> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Container(
               height: screenSize * 0.045,
               child: ListView.builder(
@@ -57,9 +60,12 @@ class _GpAssetsOverviewScreenState extends State<GpAssetsOverviewScreen> {
             ),
             Expanded(
               child: Container(
-                  child: ListWidget(
-                      txt1: 'Pump ID: xxxxxx',
-                      txt2: 'Installation Date: xx-xx-xxxx')),
+                child: ListWidget(
+                  txt1: 'Pump ID: xxxxxx',
+                  txt2: 'Installation Date: xx-xx-xxxx',
+                  ontap: Placeholder(),
+                ),
+              ),
             )
           ],
         )

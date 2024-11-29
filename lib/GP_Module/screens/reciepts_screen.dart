@@ -21,7 +21,8 @@ class _GpRecieptsScreenState extends State<GpRecieptsScreen> {
           'Submit Receipts to PHED',
           softWrap: true,
           maxLines: 2,
-          style: GoogleFonts.urbanist(
+          style: GoogleFonts.getFont(
+            'Urbanist',
             fontWeight: FontWeight.bold,
             fontSize: 26,
           ),

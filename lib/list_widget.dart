@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class ListWidget extends StatelessWidget {
   final String txt1;
   final String txt2;
+  final Widget ontap;
   const ListWidget({
     super.key,
     required this.txt1,
     required this.txt2,
+    required this.ontap,
   });
 
   @override
@@ -32,7 +34,9 @@ class ListWidget extends StatelessWidget {
                   //     border: Border.all(width: 1),
                   //     borderRadius: BorderRadius.circular(16)),
                   child: ElevatedButton(
-                      onPressed: () => null,
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ontap));
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(210, 227, 242, 250),
                       ),

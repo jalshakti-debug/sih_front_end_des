@@ -43,7 +43,8 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
           'Request Funds',
           softWrap: true,
           maxLines: 2,
-          style: GoogleFonts.urbanist(
+          style: GoogleFonts.getFont(
+            'Urbanist',
             fontWeight: FontWeight.bold,
             fontSize: 26,
           ),
