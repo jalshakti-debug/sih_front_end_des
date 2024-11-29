@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sih_ui_des/GP_Module/screens/inventory_info_screen.dart';
 import 'package:sih_ui_des/GP_Module/screens/map_view_screen.dart';
 import 'package:sih_ui_des/GP_Module/screens/profile_screen.dart';
 import '../screens/home_screen.dart';
@@ -13,7 +14,7 @@ class GpDashboard extends StatefulWidget {
 class _GpDashboardState extends State<GpDashboard> {
   int currentPageIndex = 2;
   final screens = [
-    Placeholder(),
+    GpInventoryInfoScreen(),
     GpMapViewScreen(),
     GpHomeScreen(),
     Placeholder(),
@@ -57,41 +58,41 @@ class _GpDashboardState extends State<GpDashboard> {
               ),
             ],
           ),
-          appBar: AppBar(
-            flexibleSpace: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: SearchBar(
-                      hintText: 'Search Here',
-                      leading: Icon(Icons.search),
-                      trailing: [],
-                    ),
-                  ),
-                  IconButton(
-                    alignment: Alignment.center,
-                    onPressed: () => null,
-                    icon: Icon(
-                      Icons.translate,
-                      color: Colors.lightBlue[900],
-                    ),
-                    iconSize: 30,
-                  ),
-                  IconButton(
-                    alignment: Alignment.center,
-                    onPressed: () => null,
-                    icon: Icon(
-                      Icons.notifications_none,
-                      color: Colors.black,
-                    ),
-                    iconSize: 30,
-                  ),
-                ],
-              ),
-            ),
-          ),
+          // appBar: AppBar(
+          //   flexibleSpace: Padding(
+          //     padding: const EdgeInsets.all(8.0),
+          //     child: Row(
+          //       crossAxisAlignment: CrossAxisAlignment.center,
+          //       children: [
+          //         Flexible(
+          //           child: SearchBar(
+          //             hintText: 'Search Here',
+          //             leading: Icon(Icons.search),
+          //             trailing: [],
+          //           ),
+          //         ),
+          //         IconButton(
+          //           alignment: Alignment.center,
+          //           onPressed: () => null,
+          //           icon: Icon(
+          //             Icons.translate,
+          //             color: Colors.lightBlue[900],
+          //           ),
+          //           iconSize: 30,
+          //         ),
+          //         IconButton(
+          //           alignment: Alignment.center,
+          //           onPressed: () => null,
+          //           icon: Icon(
+          //             Icons.notifications_none,
+          //             color: Colors.black,
+          //           ),
+          //           iconSize: 30,
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
           body: screens[currentPageIndex]),
     );
   }
