@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class LayoutBuilderCommon extends StatelessWidget {
-  Widget mobileDesign;
+  final Widget mobileDesign;
 
    LayoutBuilderCommon({required this.mobileDesign,super.key});
 
@@ -11,7 +11,7 @@ class LayoutBuilderCommon extends StatelessWidget {
     return LayoutBuilder(
       builder: (BuildContext ctx, BoxConstraints constraints){
         if(constraints.maxWidth<800) return mobileDesign;
-        return const Center(child: Text('Large SCreen'),);
+        return const Center(child: Text('Large Screen'),);
       }
     );
   }

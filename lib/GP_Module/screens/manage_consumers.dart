@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sih_ui_des/GP_Module/screens/consumer_info_screen.dart';
+import 'package:sih_ui_des/GP_Module/screens/register_consumer_screen.dart';
 
 import '../../list_widget.dart';
 
@@ -108,6 +109,9 @@ class _GpManageConsumersState extends State<GpManageConsumers> {
                 ),
               ),
             ),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>GpRegisterConsumerScreen()));
+            }, child: Text('add new'))
           ],
         ),
       ),
