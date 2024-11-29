@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../list_widget.dart';
 
@@ -16,37 +17,21 @@ class _GpViewComplaintsScreenState extends State<GpViewComplaintsScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        toolbarHeight: 130,
-        backgroundColor: Colors.white,
-        flexibleSpace: SafeArea(
-          child: FlexibleSpaceBar(
-            title: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    const SizedBox(width: 16),
-                    SizedBox(
-                      width: screenSize * 0.25,
-                      child: const Text(
-                        'View Complaints',
-                        softWrap: true,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 40,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          'Send Announcements',
+          softWrap: true,
+          maxLines: 2,
+          style: GoogleFonts.urbanist(
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
           ),
         ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(height: 10,),
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, ind) {

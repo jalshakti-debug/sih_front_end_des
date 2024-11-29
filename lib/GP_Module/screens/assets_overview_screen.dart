@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sih_ui_des/list_widget.dart';
 
 class GpAssetsOverviewScreen extends StatefulWidget {
@@ -15,75 +16,21 @@ class _GpAssetsOverviewScreenState extends State<GpAssetsOverviewScreen> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          toolbarHeight: 130,
-          backgroundColor: Colors.white,
-          // bottom: TabBar(
-          //   labelColor: Colors.white,
-          //   indicatorPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          //   indicatorSize: TabBarIndicatorSize.tab,
-          //   indicator: BoxDecoration(
-          //     borderRadius: BorderRadius.circular(16),
-          //     color: Colors.blue,
-          //     border: Border.all(),
-          //   ),
-          //   unselectedLabelColor: Colors.black,
-          //   dividerHeight: 0,
-          //   tabs: <Widget>[
-          //     Tab(
-          //       text: 'Pumps',
-          //     ),
-          //     Tab(
-          //       text: 'Pipelines',
-          //     ),
-          //     Tab(
-          //       text: 'Valves',
-          //     ),
-          //     Tab(
-          //       text: 'See More',
-          //     ),
-          //   ],
-          // ),
-          flexibleSpace: SafeArea(
-            child: FlexibleSpaceBar(
-              title: Column(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            height: 70,
-                            width: 70,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/images/water_tap.png'))),
-                          ),
-                          SizedBox(width: 16),
-                          SizedBox(
-                            width: 180,
-                            child: Text(
-                              'Assets Overview',
-                              softWrap: true,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 40,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+          backgroundColor: Colors.transparent,
+          title: Text(
+            'Asset Overview',
+            softWrap: true,
+            maxLines: 2,
+            style: GoogleFonts.urbanist(
+              fontWeight: FontWeight.bold,
+              fontSize: 26,
             ),
           ),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(height: 10,),
             Container(
               height: screenSize * 0.045,
               child: ListView.builder(
@@ -106,7 +53,7 @@ class _GpAssetsOverviewScreenState extends State<GpAssetsOverviewScreen> {
               ),
             ),
             SizedBox(
-              height: 16,
+              height: 20,
             ),
             Expanded(
               child: Container(

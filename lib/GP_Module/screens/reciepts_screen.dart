@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sih_ui_des/GP_Module/screens/add_new_receipt_screen.dart';
 
 class GpRecieptsScreen extends StatefulWidget {
@@ -15,28 +16,14 @@ class _GpRecieptsScreenState extends State<GpRecieptsScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        toolbarHeight: 130,
-        backgroundColor: Colors.white,
-        flexibleSpace: SafeArea(
-          child: FlexibleSpaceBar(
-            title: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(width: 16),
-                SizedBox(
-                  width: screenSize * 0.25,
-                  child: const Text(
-                    'Request Funds',
-                    softWrap: true,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 40,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          'Submit Receipts to PHED',
+          softWrap: true,
+          maxLines: 2,
+          style: GoogleFonts.urbanist(
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
           ),
         ),
       ),
@@ -45,6 +32,7 @@ class _GpRecieptsScreenState extends State<GpRecieptsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 10,),
             Text(
               'Tap on Transaction to view receipts',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
@@ -70,7 +58,10 @@ class _GpRecieptsScreenState extends State<GpRecieptsScreen> {
               alignment: Alignment.center,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, (MaterialPageRoute(builder: (context)=>GpAddNewReceiptScreen())));
+                  Navigator.push(
+                      context,
+                      (MaterialPageRoute(
+                          builder: (context) => GpAddNewReceiptScreen())));
                 },
                 child: Text('Add new Reciept'),
               ),

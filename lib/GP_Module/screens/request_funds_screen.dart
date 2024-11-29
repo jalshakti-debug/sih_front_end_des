@@ -24,6 +24,7 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
     amountfocus = FocusNode();
     reasonfocus = FocusNode();
   }
+
   @override
   void dispose() {
     amountfocus.dispose();
@@ -37,32 +38,14 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        toolbarHeight: 130,
-        backgroundColor: Colors.white,
-        flexibleSpace: SafeArea(
-          child: FlexibleSpaceBar(
-            title: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  children: [
-                    const SizedBox(width: 16),
-                    SizedBox(
-                      width: screenSize * 0.25,
-                      child: const Text(
-                        'Request Funds',
-                        softWrap: true,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 40,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          'Request Funds',
+          softWrap: true,
+          maxLines: 2,
+          style: GoogleFonts.urbanist(
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
           ),
         ),
       ),
@@ -71,12 +54,13 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 10,),
             Text(
               'Submit funding requirements for approval',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,7 +130,8 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
                       FocusScope.of(context).unfocus();
                     },
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(), hintText: 'Describe why you need the funds'),
+                        border: OutlineInputBorder(),
+                        hintText: 'Describe why you need the funds'),
                   ),
                   SizedBox(
                     height: screenSize * 0.025,
@@ -155,8 +140,9 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
               ),
             ),
             Align(
-              alignment: Alignment.center,
-              child: ElevatedButton(onPressed: (){}, child: Text('Submit Request')))
+                alignment: Alignment.center,
+                child: ElevatedButton(
+                    onPressed: () {}, child: Text('Submit Request')))
           ],
         ),
       ),

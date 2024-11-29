@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GpAddNewReceiptScreen extends StatefulWidget {
   const GpAddNewReceiptScreen({super.key});
@@ -37,32 +38,14 @@ class _GpAddNewReceiptScreenState extends State<GpAddNewReceiptScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        toolbarHeight: 130,
-        backgroundColor: Colors.white,
-        flexibleSpace: SafeArea(
-          child: FlexibleSpaceBar(
-            title: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  children: [
-                    const SizedBox(width: 16),
-                    SizedBox(
-                      width: screenSize * 0.25,
-                      child: const Text(
-                        'Add New Receipt',
-                        softWrap: true,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 40,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          'Add New Receipt',
+          softWrap: true,
+          maxLines: 2,
+          style: GoogleFonts.urbanist(
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
           ),
         ),
       ),
@@ -84,21 +67,23 @@ class _GpAddNewReceiptScreenState extends State<GpAddNewReceiptScreen> {
                         borderRadius: BorderRadius.circular(32),
                         side: BorderSide(width: 0.5)),
                     child: Align(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 32.0),
-                        child: Text('Expenditure'),
-                      )),
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 8.0, horizontal: 32.0),
+                          child: Text('Expenditure'),
+                        )),
                   );
                 },
               ),
             ),
+            SizedBox(height: 10,),
             Text(
               'Submit funding requirements for approval',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,

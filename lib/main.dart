@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
               surface: Colors.white,
               onSurface: Colors.black)),
       debugShowCheckedModeBanner: false,
-      home: PhedAddAnnouncementsScreen(),
+      home: GpDashboard(),
     );
   }
 }

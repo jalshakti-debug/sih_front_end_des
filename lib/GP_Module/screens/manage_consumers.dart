@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../list_widget.dart';
 
@@ -10,7 +11,6 @@ class GpManageConsumers extends StatefulWidget {
 }
 
 class _GpManageConsumersState extends State<GpManageConsumers> {
-
   @override
   void initState() {
     // TODO: implement initState
@@ -29,54 +29,14 @@ class _GpManageConsumersState extends State<GpManageConsumers> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        toolbarHeight: screenSize * 0.125,
-        // bottom: TabBar(
-        //   labelColor: Colors.white,
-        //   indicatorPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        //   indicatorSize: TabBarIndicatorSize.tab,
-        //   indicator: BoxDecoration(
-        //     borderRadius: BorderRadius.circular(16),
-        //     color: Colors.blue,
-        //     border: Border.all(),
-        //   ),
-        //   unselectedLabelColor: Colors.black,
-        //   dividerHeight: 0,
-        //   tabs: <Widget>[
-        //     Tab(
-        //       text: 'Households',
-        //     ),
-        //     Tab(
-        //       text: 'Schools',
-        //     ),
-        //     Tab(
-        //       text: 'AWCs',
-        //     ),
-        //   ],
-        // ),
-        flexibleSpace: SafeArea(
-          child: FlexibleSpaceBar(
-            title: Column(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 16),
-                    SizedBox(
-                      width: screenSize*0.25,
-                      child: Text(
-                        'Manage Consumers',
-                        softWrap: true,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 40,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          'Manage Consumers',
+          softWrap: true,
+          maxLines: 2,
+          style: GoogleFonts.urbanist(
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
           ),
         ),
       ),
@@ -84,6 +44,7 @@ class _GpManageConsumersState extends State<GpManageConsumers> {
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           children: [
+            SizedBox(height: 10,),
             TextField(
               decoration: InputDecoration(
                 prefixIcon: const Icon(Icons.search),
@@ -97,9 +58,13 @@ class _GpManageConsumersState extends State<GpManageConsumers> {
                         const BorderSide(width: 1, color: Colors.black)),
               ),
             ),
+            SizedBox(height: 20,),
             Align(
-              alignment: Alignment.centerLeft,
-              child: Text('Active Consumer', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),)),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Active Consumer',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                )),
             Container(
               height: screenSize * 0.045,
               child: ListView.builder(
@@ -113,17 +78,24 @@ class _GpManageConsumersState extends State<GpManageConsumers> {
                         borderRadius: BorderRadius.circular(16),
                         side: BorderSide(width: 0.5)),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
-                      child: Text('Household', textAlign: TextAlign.center,),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12.0, vertical: 8.0),
+                      child: Text(
+                        'Household',
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   );
                 },
               ),
             ),
-            SizedBox(height: 16,),
+            SizedBox(
+              height: 16,
+            ),
             Expanded(
               child: Container(
-                child: ListWidget(txt1: 'Name: xxxxxxx', txt2: 'Consumer ID xxxx xxxx')),
+                  child: ListWidget(
+                      txt1: 'Name: xxxxxxx', txt2: 'Consumer ID xxxx xxxx')),
             ),
           ],
         ),
