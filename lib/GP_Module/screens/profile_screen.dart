@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../common_widgets/global_backgroung.dart';
+import '../../common_widgets/layout_builder_common.dart';
+
 class GpProfileScreen extends StatefulWidget {
   const GpProfileScreen({super.key});
 
@@ -10,6 +13,11 @@ class GpProfileScreen extends StatefulWidget {
 class _GpProfileScreenState extends State<GpProfileScreen> {
   @override
   Widget build(BuildContext context) {
+    return LayoutBuilderCommon(
+      mobileDesign: GlobalBackground(child: mobileDesign()),
+    );
+  }
+  Widget mobileDesign() {
     var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return LayoutBuilder(builder: (context, constraints) {
       return Column(

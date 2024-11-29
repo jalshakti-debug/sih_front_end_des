@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../common_widgets/global_backgroung.dart';
+import '../../common_widgets/layout_builder_common.dart';
 import '../../list_widget.dart';
 
 class GpViewComplaintsScreen extends StatefulWidget {
@@ -11,8 +13,13 @@ class GpViewComplaintsScreen extends StatefulWidget {
 }
 
 class _GpViewComplaintsScreenState extends State<GpViewComplaintsScreen> {
-  @override
+   @override
   Widget build(BuildContext context) {
+    return LayoutBuilderCommon(
+      mobileDesign: GlobalBackground(child: mobileDesign()),
+    );
+  }
+  Widget mobileDesign() {
     final screenSize = MediaQuery.sizeOf(context).height;
     return Scaffold(
       backgroundColor: Colors.white,

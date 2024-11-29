@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../common_widgets/global_backgroung.dart';
+import '../../common_widgets/layout_builder_common.dart';
 import '../../info_field_tile.dart';
 
 class GpConsumerInfoScreen extends StatefulWidget {
@@ -13,24 +15,31 @@ class GpConsumerInfoScreen extends StatefulWidget {
 class _GpConsumerInfoScreenState extends State<GpConsumerInfoScreen> {
   @override
   Widget build(BuildContext context) {
+    return LayoutBuilderCommon(
+      mobileDesign: GlobalBackground(child: mobileDesign()),
+    );
+  }
+
+  Widget mobileDesign() {
     final screenSize = MediaQuery.sizeOf(context).height;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          title: Text(
-            '<Consumer Name>',
-            softWrap: true,
-            maxLines: 2,
-            style: GoogleFonts.getFont(
-              'Urbanist',
-              fontWeight: FontWeight.bold,
-              fontSize: 26,
-            ),
+        backgroundColor: Colors.transparent,
+        title: Text(
+          '<Consumer Name>',
+          softWrap: true,
+          maxLines: 2,
+          style: GoogleFonts.getFont(
+            'Urbanist',
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
           ),
         ),
+      ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: screenSize*0.05),
+        padding:
+            EdgeInsets.symmetric(horizontal: 16.0, vertical: screenSize * 0.05),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -61,7 +70,8 @@ class _GpConsumerInfoScreenState extends State<GpConsumerInfoScreen> {
                     ),
                     info_field_tile(
                       label: 'Address',
-                      value:'XXXXX X, XXXXX XXXXXXXXxx XXXXXXXXXXXxxx XXXXXXX XXXXX',
+                      value:
+                          'XXXXX X, XXXXX XXXXXXXXxx XXXXXXXXXXXxxx XXXXXXX XXXXX',
                     ),
                   ],
                 ),
@@ -74,7 +84,7 @@ class _GpConsumerInfoScreenState extends State<GpConsumerInfoScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: screenSize*0.01),
+                  padding: EdgeInsets.symmetric(horizontal: screenSize * 0.01),
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                       padding:
@@ -132,6 +142,4 @@ class _GpConsumerInfoScreenState extends State<GpConsumerInfoScreen> {
       ),
     );
   }
-
-  
 }

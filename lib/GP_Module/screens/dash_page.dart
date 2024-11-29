@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sih_ui_des/GP_Module/screens/inventory_info_screen.dart';
 import 'package:sih_ui_des/GP_Module/screens/map_view_screen.dart';
 import 'package:sih_ui_des/GP_Module/screens/profile_screen.dart';
+import '../../common_widgets/global_backgroung.dart';
+import '../../common_widgets/layout_builder_common.dart';
 import '../screens/home_screen.dart';
 
 class GpDashboard extends StatefulWidget {
@@ -20,8 +22,13 @@ class _GpDashboardState extends State<GpDashboard> {
     Placeholder(),
     GpProfileScreen(),
   ];
-  @override
+   @override
   Widget build(BuildContext context) {
+    return LayoutBuilderCommon(
+      mobileDesign: GlobalBackground(child: mobileDesign()),
+    );
+  }
+  Widget mobileDesign() {
     return SafeArea(
       child: Scaffold(
           extendBody: true,

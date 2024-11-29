@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sih_ui_des/GP_Module/screens/consumer_info_screen.dart';
 import 'package:sih_ui_des/GP_Module/screens/register_consumer_screen.dart';
 
+import '../../common_widgets/global_backgroung.dart';
+import '../../common_widgets/layout_builder_common.dart';
 import '../../list_widget.dart';
 
 class GpManageConsumers extends StatefulWidget {
@@ -25,8 +27,13 @@ class _GpManageConsumersState extends State<GpManageConsumers> {
     super.dispose();
   }
 
-  @override
+ @override
   Widget build(BuildContext context) {
+    return LayoutBuilderCommon(
+      mobileDesign: GlobalBackground(child: mobileDesign()),
+    );
+  }
+  Widget mobileDesign() {
     final screenSize = MediaQuery.sizeOf(context).height;
     return Scaffold(
       backgroundColor: Colors.white,

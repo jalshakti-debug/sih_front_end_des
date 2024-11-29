@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sih_ui_des/list_widget.dart';
 
+import '../../common_widgets/global_backgroung.dart';
+import '../../common_widgets/layout_builder_common.dart';
+
 class GpAssetsOverviewScreen extends StatefulWidget {
   const GpAssetsOverviewScreen({super.key});
 
@@ -10,8 +13,13 @@ class GpAssetsOverviewScreen extends StatefulWidget {
 }
 
 class _GpAssetsOverviewScreenState extends State<GpAssetsOverviewScreen> {
-  @override
+   @override
   Widget build(BuildContext context) {
+    return LayoutBuilderCommon(
+      mobileDesign: GlobalBackground(child: mobileDesign()),
+    );
+  }
+  Widget mobileDesign() {
     final screenSize = MediaQuery.sizeOf(context).height;
     return Scaffold(
         backgroundColor: Colors.white,

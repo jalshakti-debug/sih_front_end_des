@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../common_widgets/global_backgroung.dart';
+import '../../common_widgets/layout_builder_common.dart';
+
 class GpRequestFundsScreen extends StatefulWidget {
   const GpRequestFundsScreen({super.key});
 
@@ -34,6 +37,12 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    return LayoutBuilderCommon(
+      mobileDesign: GlobalBackground(child: mobileDesign()),
+    );
+  }
+
+  Widget mobileDesign() {
     final screenSize = MediaQuery.sizeOf(context).height;
     return Scaffold(
       backgroundColor: Colors.white,
@@ -55,13 +64,16 @@ class _GpRequestFundsScreenState extends State<GpRequestFundsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Text(
               'Submit funding requirements for approval',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../common_widgets/global_backgroung.dart';
+import '../../common_widgets/layout_builder_common.dart';
+
 class GpMapViewScreen extends StatefulWidget {
   const GpMapViewScreen({super.key});
 
@@ -8,8 +11,13 @@ class GpMapViewScreen extends StatefulWidget {
 }
 
 class _GpMapViewScreenState extends State<GpMapViewScreen> {
-  @override
+ @override
   Widget build(BuildContext context) {
+    return LayoutBuilderCommon(
+      mobileDesign: GlobalBackground(child: mobileDesign()),
+    );
+  }
+  Widget mobileDesign() {
     return LayoutBuilder(builder: (context, constraints) {
       return GridView(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

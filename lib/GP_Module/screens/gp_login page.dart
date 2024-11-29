@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
+import '../../common_widgets/global_backgroung.dart';
+import '../../common_widgets/layout_builder_common.dart';
+
 class GPLoginPage extends StatefulWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String _id = '';
@@ -63,8 +66,13 @@ class _GPLoginPageState extends State<GPLoginPage> {
     }
   }
 
-  @override
+ @override
   Widget build(BuildContext context) {
+    return LayoutBuilderCommon(
+      mobileDesign: GlobalBackground(child: mobileDesign()),
+    );
+  }
+  Widget mobileDesign() {
     return LayoutBuilder(
       builder:(context, constraints)=> GridView(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: constraints.maxWidth, mainAxisExtent: constraints.maxHeight + 80),

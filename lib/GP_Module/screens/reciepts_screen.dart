@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sih_ui_des/GP_Module/screens/add_new_receipt_screen.dart';
 
+import '../../common_widgets/global_backgroung.dart';
+import '../../common_widgets/layout_builder_common.dart';
+
 class GpRecieptsScreen extends StatefulWidget {
   const GpRecieptsScreen({super.key});
 
@@ -10,8 +13,13 @@ class GpRecieptsScreen extends StatefulWidget {
 }
 
 class _GpRecieptsScreenState extends State<GpRecieptsScreen> {
-  @override
+   @override
   Widget build(BuildContext context) {
+    return LayoutBuilderCommon(
+      mobileDesign: GlobalBackground(child: mobileDesign()),
+    );
+  }
+  Widget mobileDesign() {
     final screenSize = MediaQuery.sizeOf(context).height;
     return Scaffold(
       backgroundColor: Colors.white,
